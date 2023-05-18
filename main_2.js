@@ -1,19 +1,19 @@
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
-var allCards = $("#job-list > li");
+var allCards = $("#job-list li");
 var filterTagsMainWrapper = $(".filter-tags-c");
 
 function addTagToFilterArea(tag) {
   //debugger;
-  var filterAreaTags = tagsAdded.find("li");
+  var filterAreaTags = cardTags.find("li");
   var addFlag = true;
-
-
-  for (var i = 0; i < filterAreaTags.length; i++) {
-    var currentTagText = filterAreaTags.eq(i).find("p").text();
-    if (currentTagText == tag) {
-      addFlag = false;
-    }
+ 
+    
+      for(var i=0; i < filterAreaTags.length;i++){
+        var currentTagText = filterAreaTags.eq(i).text();
+        if(currentTagText == tag){
+          addFlag = false;
+        }
 
 
   }
@@ -24,7 +24,8 @@ function addTagToFilterArea(tag) {
 
 function clearAllTags() {
   tagsAdded.find("li").remove();
-
+  toggleTagsFilterArea('hidden');
+  
 }
 
 function toggleTagsFilterArea(flag) {
@@ -33,12 +34,12 @@ function toggleTagsFilterArea(flag) {
   else
     filterTagsMainWrapper.show();
 }
-
-$(document).ready(function () {
-
-
-  toggleTagsFilterArea('hide');
-
+    
+    $(document).ready(function(){
+      
+     
+      toggleTagsFilterArea('hidden');
+      
 
   $(".clear-tags").click(clearAllTags)
 
@@ -53,31 +54,32 @@ $(document).ready(function () {
     var tagSelected = tagsAdded.find("li");
 
 
-    for (var i = 0; i < allCards.length; i++) {
-      //  debugger;
-
-      var singleCardTags = allCards.eq(i).find(".job-card__tags li");
-      //console.log(singleCardTags)
-
-      for (var k = 0; k < tagSelected.length; k++) {
-        for (j = 0; j < singleCardTags.length; j++) {
-          if (singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text()) {
-            matching += 1;
-
-
-
+        for(var i = 0; i< allCards.length;i++){
+          //  debugger;
+          
+          var singleCardTags = allCards.eq(i).find(".job-card__tags li");
+          //console.log(singleCardTags)
+          for(var k = 0; k<tagSelected.length;k++){
+            for(j = 0 ;j < singleCardTags.length; j++){
+              if(singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text() ){
+                  allCards.eq(i).removeClass("d-none").attr("data-show", true);
+                
+  
+  
+              }
+              
+            
+            }
+            
+            
           }
+          // if(matching == tagSelected.length){
+          //       allCards.eq(i).removeClass("d-none");
+          // }
         }
-
-
-      }
-      if (matching == tagSelected.length) {
-        allCards.eq(i).removeClass("d-none");
-      }
-    }
-  })
-
-  $(document).on("click", ".close-span", function () {
+      })
+      
+      $(document).on("click",".close-span",function(){
 
     $(this).parents(".tag-filter").remove();
     var matching = 0;
