@@ -7,6 +7,7 @@ var filterTagsMainWrapper = $(".filter-tags-c");
 function addTagToFilterArea(tag){
   //debugger;
   var filterAreaTags = tagsAdded.find("li");
+  console.log(filterAreaTags)
   var addFlag = true;
  
     
@@ -37,7 +38,8 @@ function toggleTagsFilterArea(flag){
     $(document).ready(function(){
       
      
-      toggleTagsFilterArea('hide');
+      toggleTagsFilterArea('show');
+
       
 
       $(".clear-tags").click(clearAllTags)
@@ -47,9 +49,11 @@ function toggleTagsFilterArea(flag){
         toggleTagsFilterArea('show');
         var tagText = $(this).text();
         
+        
         var matching = 0;
         
         allCards.addClass("d-none").attr("data-show",false);
+        debugger
         
         addTagToFilterArea(tagText);
         var tagSelected = tagsAdded.find("li");
@@ -57,7 +61,8 @@ function toggleTagsFilterArea(flag){
 
 
         for(var i = 0; i< allCards.length;i++){
-          //  debugger;
+            debugger;
+          matching = 0;
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
           
@@ -78,9 +83,10 @@ function toggleTagsFilterArea(flag){
             
             
           }
-          if(matching > tagSelected.length){
-            console.log(tagSelected.length)
-                allCards.eq(i).removeClass("d-none");
+          if(matching < tagSelected.length){
+            debugger
+                allCards.eq(i).removeClass('d-flex');
+                allCards.eq(i).addClass('d-none')
           }
         }
       })
