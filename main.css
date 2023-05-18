@@ -45,12 +45,12 @@ main {
   height: 100%;
   width: 100%;
   margin-right: 15px;
-}
-.job-card__info .img-c img {
-  width: 88px;
-  height: 88px;
   border: solid;
   border-radius: 50%;
+}
+.job-card__info .img-c img {
+  max-height: auto;
+  max-width: 60px;
   -o-object-fit: contain;
      object-fit: contain;
 }
