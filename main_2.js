@@ -1,18 +1,16 @@
-console.log(data);
-
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
-var allCards = $("#job-list > li");
+var allCards = $("#job-list li");
 var filterTagsMainWrapper = $(".filter-tags-c");
 
 function addTagToFilterArea(tag){
   //debugger;
-  var filterAreaTags = tagsAdded.find("li");
+  var filterAreaTags = cardTags.find("li");
   var addFlag = true;
  
     
       for(var i=0; i < filterAreaTags.length;i++){
-        var currentTagText = filterAreaTags.eq(i).find("p").text();
+        var currentTagText = filterAreaTags.eq(i).text();
         if(currentTagText == tag){
           addFlag = false;
         }
@@ -26,6 +24,7 @@ function addTagToFilterArea(tag){
 
 function clearAllTags(){
   tagsAdded.find("li").remove();
+  toggleTagsFilterArea('hidden');
   
 }
 function toggleTagsFilterArea(flag){
@@ -38,7 +37,7 @@ function toggleTagsFilterArea(flag){
     $(document).ready(function(){
       
      
-      toggleTagsFilterArea('hide');
+      toggleTagsFilterArea('hidden');
       
 
       $(".clear-tags").click(clearAllTags)
@@ -59,11 +58,10 @@ function toggleTagsFilterArea(flag){
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
           //console.log(singleCardTags)
-          
           for(var k = 0; k<tagSelected.length;k++){
             for(j = 0 ;j < singleCardTags.length; j++){
-              if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text() ){
-                matching +=1;
+              if(singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text() ){
+                  allCards.eq(i).removeClass("d-none").attr("data-show", true);
                 
   
   
@@ -74,9 +72,9 @@ function toggleTagsFilterArea(flag){
             
             
           }
-          if(matching == tagSelected.length){
-                allCards.eq(i).removeClass("d-none");
-          }
+          // if(matching == tagSelected.length){
+          //       allCards.eq(i).removeClass("d-none");
+          // }
         }
       })
       
