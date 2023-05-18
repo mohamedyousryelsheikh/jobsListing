@@ -1,4 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100&display=swap");
+#job-list {
+  list-style-type: none;
+}
+
+.job-card__info ul {
+  list-style-type: none;
+}
+.job-card__info h6:hover {
+  color: #58a9a7;
+}
+.job-card__info .tag-featured {
+  border-radius: 21px;
+}
+
 header {
   width: 100vw;
   height: 150px;
@@ -82,7 +96,6 @@ main {
 }
 .job-card__info ul {
   display: flex;
-  list-style-type: none;
   padding: 0;
   margin: 0;
 }
