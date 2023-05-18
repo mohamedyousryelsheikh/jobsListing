@@ -1,7 +1,11 @@
+// console.log(data);
+
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
 var allCards = $("#job-list > li");
 var filterTagsMainWrapper = $(".filter-tags-c");
+
+
 
 function addTagToFilterArea(tag){
   //debugger;
