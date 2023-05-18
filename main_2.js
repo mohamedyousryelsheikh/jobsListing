@@ -23,6 +23,7 @@ function addTagToFilterArea(tag) {
 }
 
 function clearAllTags() {
+  allCards.removeClass("d-none").attr("data-show", true);
   tagsAdded.find("li").remove();
   toggleTagsFilterArea('hidden');
   
@@ -56,14 +57,13 @@ function toggleTagsFilterArea(flag) {
 
         for(var i = 0; i< allCards.length;i++){
           //  debugger;
-          
+          matching = 0;
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
           //console.log(singleCardTags)
           for(var k = 0; k<tagSelected.length;k++){
             for(j = 0 ;j < singleCardTags.length; j++){
               if (singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text() ){
-                  allCards.eq(i).removeClass("d-none").attr("data-show", true);
-
+                  matching++
   
               }
               
@@ -72,9 +72,10 @@ function toggleTagsFilterArea(flag) {
             
             
           }
-          // if(matching == tagSelected.length){
-          //       allCards.eq(i).removeClass("d-none");
-          // }
+          if(matching == tagSelected.length){
+            allCards.eq(i).removeClass("d-none").attr("data-show", true);
+          }
+         
         }
       })
       
@@ -87,25 +88,25 @@ function toggleTagsFilterArea(flag) {
 
     for (var i = 0; i < allCards.length; i++) {
 
-
+      matching = 0;
       var singleCardTags = allCards.eq(i).find(".job-card__tags li");
       for (k = 0; k < tagSelected.length; k++) {
 
         for (var j = 0; j < singleCardTags.length; j++) {
-          if (singleCardTags.eq(j).text() == tagSelected.eq(k).text()) {
-            matching += 1;
-             //allCards.eq(i).attr("data-show",true).removeClass("d-none")
+          if (singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text()) {
+               matching += 1;
           }
         }
 
       }
       if (matching == tagSelected.length) {
-        allCards.eq(i).removeClass("d-none");
+        allCards.eq(i).attr("data-show",true).removeClass("d-none")
       }
 
     }
 
-
+    if(tagSelected.length == 0)
+    toggleTagsFilterArea('hidden');
   })
 
 });
