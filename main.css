@@ -74,6 +74,7 @@ main {
   text-transform: uppercase;
   font-size: 11px;
   display: none;
+  border-radius: 15px;
 }
 .job-card__info h6 {
   color: #323838;
@@ -89,22 +90,18 @@ main {
 .job-card__info ul li {
   font-size: 15px;
   color: #939c9b;
-  padding: 0 10px;
+  padding: 0 10px 0px 0px;
   position: relative;
 }
 .job-card__info ul li:before {
   content: "";
   height: 4px;
   width: 4px;
-  position: absolute;
   top: 50%;
   background-color: #939c9b;
   border-radius: 50%;
   left: -2px;
   transform: translateY(-50%);
-}
-.job-card__info ul li:first-child {
-  padding-left: 0;
 }
 .job-card__info ul li:first-child:before {
   display: none;
@@ -197,4 +194,8 @@ main {
   margin-left: 20px;
   border-bottom: 1px solid #58a9a7;
   cursor: pointer;
+}
+
+li {
+  list-style-type: none;
 }/*# sourceMappingURL=main.css.map */
