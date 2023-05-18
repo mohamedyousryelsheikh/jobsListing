@@ -88,7 +88,6 @@ main {
       text-transform: uppercase;
       font-size: 11px;
       display: none;
-      @extend .badge-pill;
     }
 
     .tag-featured {
@@ -100,7 +99,6 @@ main {
       text-transform: uppercase;
       font-size: 11px;
       display: none;
-      @extend .badge-pill;
     }
 
     h6 {
@@ -253,5 +251,11 @@ main {
     margin-left: 20px;
     border-bottom: 1px solid #58a9a7;
     cursor: pointer;
+  }
+}
+
+@media(min-width:767px) {
+  hr {
+    display:none;
   }
 }
