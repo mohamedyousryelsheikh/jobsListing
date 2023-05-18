@@ -1,5 +1,3 @@
-console.log(data);
-
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
 var allCards = $("#job-list > li");
@@ -26,7 +24,7 @@ function addTagToFilterArea(tag){
 
 function clearAllTags(){
   tagsAdded.find("li").remove();
-  
+  allCards.removeClass("d-none");
 }
 function toggleTagsFilterArea(flag){
   if(flag == 'hidden')
@@ -54,25 +52,22 @@ function toggleTagsFilterArea(flag){
         var tagSelected = tagsAdded.find("li");
 
 
+        // loop on all cards
         for(var i = 0; i< allCards.length;i++){
           //  debugger;
-          
+          matching = 0;
+          // get tags for one card
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
-          //console.log(singleCardTags)
           
+          // loop on all the tags selected by the user
           for(var k = 0; k<tagSelected.length;k++){
-            for(j = 0 ;j < singleCardTags.length; j++){
+            // loop on all the tags for this one card
+            for(var j = 0 ;j < singleCardTags.length; j++){
               if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text() ){
                 matching +=1;
-                
-  
-  
+                // allCards.eq(i).removeClass("d-none");
               }
-              
-            
             }
-            
-            
           }
           if(matching == tagSelected.length){
                 allCards.eq(i).removeClass("d-none");
@@ -88,15 +83,15 @@ function toggleTagsFilterArea(flag){
         allCards.addClass("d-none").attr("data-show",false);
         
         for(var i = 0; i< allCards.length;i++){
-          
+          matching = 0;
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
-          for(k=0;k<tagSelected.length;k++){
+          for(var k=0;k<tagSelected.length;k++){
 
             for(var j = 0; j<singleCardTags.length;j++){
-              if(singleCardTags.eq(j).text() == tagSelected.eq(k).text()){
+              if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text()){
                 matching +=1;
-               // allCards.eq(i).attr("data-show",true).removeClass("d-none")
+                // allCards.eq(i).attr("data-show",true).removeClass("d-none")
               }
             }
 
