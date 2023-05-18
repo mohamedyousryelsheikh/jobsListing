@@ -56,15 +56,15 @@ main {
 
     .img-c {
       height: 100%;
+      width: 100%;
       margin-right: 15px;
-      
+      border: solid;
+      border-radius: 50%;
+
 
       img {
-        width: 88px;
-        height: 88px;
-        border: solid;
-        border-radius: 50%;
-
+        max-height: auto;
+        max-width: 60px;
         object-fit: contain;
       }
     }
