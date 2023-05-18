@@ -1,6 +1,6 @@
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
-var allCards = $("#job-list li");
+var allCards = $("#job-list > li");
 var filterTagsMainWrapper = $(".filter-tags-c");
 
 function addTagToFilterArea(tag) {
@@ -61,10 +61,9 @@ function toggleTagsFilterArea(flag) {
           //console.log(singleCardTags)
           for(var k = 0; k<tagSelected.length;k++){
             for(j = 0 ;j < singleCardTags.length; j++){
-              if(singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text() ){
+              if (singleCardTags.eq(j).text() == tagSelected.eq(k).find('p').text() ){
                   allCards.eq(i).removeClass("d-none").attr("data-show", true);
-                
-  
+
   
               }
               
@@ -95,7 +94,7 @@ function toggleTagsFilterArea(flag) {
         for (var j = 0; j < singleCardTags.length; j++) {
           if (singleCardTags.eq(j).text() == tagSelected.eq(k).text()) {
             matching += 1;
-            // allCards.eq(i).attr("data-show",true).removeClass("d-none")
+             //allCards.eq(i).attr("data-show",true).removeClass("d-none")
           }
         }
 
