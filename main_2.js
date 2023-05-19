@@ -27,6 +27,10 @@ function addTagToFilterArea(tag){
 function clearAllTags(){
   tagsAdded.find("li").remove();
   
+  allCards.removeClass("d-none").attr("data-show",true);
+  allCards.addClass("d-flex")
+  
+  
 }
 function toggleTagsFilterArea(flag){
   if(flag == 'hidden')
@@ -53,7 +57,7 @@ function toggleTagsFilterArea(flag){
         var matching = 0;
         
         allCards.addClass("d-none").attr("data-show",false);
-        debugger
+        
         
         addTagToFilterArea(tagText);
         var tagSelected = tagsAdded.find("li");
@@ -61,7 +65,7 @@ function toggleTagsFilterArea(flag){
 
 
         for(var i = 0; i< allCards.length;i++){
-            debugger;
+            
           matching = 0;
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
@@ -72,6 +76,7 @@ function toggleTagsFilterArea(flag){
             for(var j = 0 ;j < singleCardTags.length; j++){
               if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text() ){
                 matching +=1;
+               
                 console.log(singleCardTags.eq(j).text())
                 
   
@@ -84,7 +89,7 @@ function toggleTagsFilterArea(flag){
             
           }
           if(matching < tagSelected.length){
-            debugger
+            
                 allCards.eq(i).removeClass('d-flex');
                 allCards.eq(i).addClass('d-none')
           }
@@ -93,9 +98,13 @@ function toggleTagsFilterArea(flag){
       
       $(document).on("click",".close-span",function(){
 
+        var tagSelected = tagsAdded.find("li");
+        var tagtxt=document.querySelector(".tag-filter").textContent.substring(0,document.querySelector(".tag-filter").textContent.length-1)
         $(this).parents(".tag-filter").remove();
         var matching = 0;
-        var tagSelected = tagsAdded.find("li");
+        
+        
+        allCards.removeClass('d-flex')
         allCards.addClass("d-none").attr("data-show",false);
         
         for(var i = 0; i< allCards.length;i++){
@@ -105,9 +114,10 @@ function toggleTagsFilterArea(flag){
           for(k=0;k<tagSelected.length;k++){
 
             for(var j = 0; j<singleCardTags.length;j++){
-              if(singleCardTags.eq(j).text() == tagSelected.eq(k).text()){
+              if(singleCardTags.eq(j).text() == tagtxt){
                 matching +=1;
-               // allCards.eq(i).attr("data-show",true).removeClass("d-none")
+                allCards.eq(i).attr("data-show",true).removeClass("d-none")
+                allCards.eq(i).addClass("d-flex")
               }
             }
 
