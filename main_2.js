@@ -116,14 +116,15 @@ function toggleTagsFilterArea(flag){
             for(var j = 0; j<singleCardTags.length;j++){
               if(singleCardTags.eq(j).text() == tagtxt){
                 matching +=1;
-                allCards.eq(i).attr("data-show",true).removeClass("d-none")
-                allCards.eq(i).addClass("d-flex")
+                allCards.attr("data-show",true).removeClass("d-none")
+                allCards.addClass("d-flex")
               }
             }
 
           }
           if(matching == tagSelected.length){
             allCards.eq(i).removeClass("d-none");
+            allCards.eq(i).addClass("d-flex")
       }
 
         }
