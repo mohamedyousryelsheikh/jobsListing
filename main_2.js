@@ -77,7 +77,7 @@ function toggleTagsFilterArea(flag){
               if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text() ){
                 matching +=1;
                
-                console.log(singleCardTags.eq(j).text())
+                
                 
   
   
@@ -98,34 +98,51 @@ function toggleTagsFilterArea(flag){
       
       $(document).on("click",".close-span",function(){
 
-        var tagSelected = tagsAdded.find("li");
-        var tagtxt=document.querySelector(".tag-filter").textContent.substring(0,document.querySelector(".tag-filter").textContent.length-1)
         $(this).parents(".tag-filter").remove();
+        var tagSelected = tagsAdded.find("li");
+        console.log(tagSelected)
+        
+        var tagtxt= tagtxt=tagSelected.eq((tagSelected.length-1)).text().substring(0,tagSelected.eq((tagSelected.length-1)).text().length-1)
+       
         var matching = 0;
         
-        
+         
         allCards.removeClass('d-flex')
         allCards.addClass("d-none").attr("data-show",false);
         
         for(var i = 0; i< allCards.length;i++){
+          var negative_counter=2
+          var matching = 0;
+          
           
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
-          for(k=0;k<tagSelected.length;k++){
+          for(k=0;k<(tagSelected.length);k++){
+           
+            if(k>0){
+              
+              tagtxt=tagSelected.eq((tagSelected.length-negative_counter)).text().substring(0,tagSelected.eq((tagSelected.length-negative_counter)).text().length-1)
+              
+              negative_counter++
+            }
 
             for(var j = 0; j<singleCardTags.length;j++){
               if(singleCardTags.eq(j).text() == tagtxt){
                 matching +=1;
-                allCards.attr("data-show",true).removeClass("d-none")
-                allCards.addClass("d-flex")
+                
               }
             }
 
           }
-          if(matching == tagSelected.length){
-            allCards.eq(i).removeClass("d-none");
-            allCards.eq(i).addClass("d-flex")
-      }
+          if(matching == (tagSelected.length)){
+            if(tagSelected.length==0){
+              allCards.attr("data-show",true).removeClass("d-none")
+                allCards.addClass("d-flex")
+
+            }
+            allCards.eq(i).attr("data-show",true).removeClass("d-none")
+                allCards.eq(i).addClass("d-flex")
+                }
 
         }
 
