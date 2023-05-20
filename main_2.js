@@ -1,5 +1,3 @@
-console.log(data);
-
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
 var allCards = $("#job-list > li");
@@ -25,7 +23,9 @@ function addTagToFilterArea(tag){
 }
 
 function clearAllTags(){
+  toggleTagsFilterArea("hidden");
   tagsAdded.find("li").remove();
+
   
 }
 function toggleTagsFilterArea(flag){
@@ -38,7 +38,7 @@ function toggleTagsFilterArea(flag){
     $(document).ready(function(){
       
      
-      toggleTagsFilterArea('hide');
+      toggleTagsFilterArea('hidden');
       
 
       $(".clear-tags").click(clearAllTags)
@@ -81,10 +81,13 @@ function toggleTagsFilterArea(flag){
       })
       
       $(document).on("click",".close-span",function(){
-
+        
         $(this).parents(".tag-filter").remove();
         var matching = 0;
         var tagSelected = tagsAdded.find("li");
+        if (tagSelected.length == 0) {
+            toggleTagsFilterArea("hidden");
+        }
         allCards.addClass("d-none").attr("data-show",false);
         
         for(var i = 0; i< allCards.length;i++){
