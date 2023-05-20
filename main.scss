@@ -28,11 +28,7 @@ main {
 }
 
 .job-card {
-<<<<<<< HEAD
   flex-wrap: wrap;
-=======
-  display: flex;
->>>>>>> 73b2780494ab96ba4d4608d9f7eca585190b0db5
   padding: 30px;
   background-color: white;
   width: 100%;
@@ -272,12 +268,7 @@ main {
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 969px) {
-=======
-
-@media (max-width: 768px) {
->>>>>>> 73b2780494ab96ba4d4608d9f7eca585190b0db5
   /* CSS rules for mobile view */
 
 body{
@@ -322,20 +313,4 @@ body{
 
   }
 }
-@media only screen and (max-width: 1000px) {
-  .job-card {
-   display: block;
-   margin-bottom: 50px;
-   padding: 10px;
-  }
-  .job-card__tags{
-    
-    padding-left: 0px !important;
-  
-  }
-   
-  .img-c {
-    margin-top: -50px;
-  }
-
 }
