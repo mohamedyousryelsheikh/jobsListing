@@ -6,6 +6,11 @@
 //   font-size: 15px;
 // }
 
+
+
+.custom_width{
+  background-color: none;
+}
 header {
   width: 100vw;
   height: 150px;
@@ -114,12 +119,14 @@ main {
       list-style-type: none;
       padding: 0;
       margin: 0;
+      width:250px;
 
       li {
         font-size: 15px;
         color: #939c9b;
         padding: 0 10px;
         position: relative;
+        
 
         &:before {
           content: "";
@@ -173,7 +180,7 @@ main {
       color: #58a9a7;
       font-weight: 500;
       background-color: #f1f7f5;
-      margin: 5px 10px 5px 0;
+      margin: 10px 10px 5px 0;
       cursor: pointer;
       transition: all ease 0.2s;
 
