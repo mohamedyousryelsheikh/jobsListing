@@ -27,6 +27,8 @@ function clearAllTags(){
   tagsAdded.find("li").remove();
   //second fix
   allCards.removeClass("d-none")
+  //fix
+  allCards.addClass("d-flex");
   //sixth fix
   toggleTagsFilterArea('hidden');
   
