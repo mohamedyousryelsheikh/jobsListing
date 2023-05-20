@@ -25,6 +25,7 @@ function addTagToFilterArea(tag){
 }
 
 function clearAllTags(){
+  filterTagsMainWrapper.hide();
   tagsAdded.find("li").remove();
   
   allCards.removeClass("d-none").attr("data-show",true);
@@ -42,21 +43,23 @@ function toggleTagsFilterArea(flag){
     $(document).ready(function(){
       
      
-      toggleTagsFilterArea('show');
+      toggleTagsFilterArea('hidden');
 
       
 
       $(".clear-tags").click(clearAllTags)
 
       cardTags.click(function(){
+      // debugger;
+        
 
         toggleTagsFilterArea('show');
         var tagText = $(this).text();
         
         
+        
         var matching = 0;
         
-        allCards.addClass("d-none").attr("data-show",false);
         
         
         
