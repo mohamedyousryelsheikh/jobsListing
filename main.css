@@ -28,6 +28,7 @@ main {
   justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 20px;
+  box-shadow: 0px 8px 5px rgb(200, 224, 212);
 }
 .job-card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
@@ -47,10 +48,11 @@ main {
   margin-right: 15px;
 }
 .job-card__info .img-c img {
-  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
 }
 .job-card__info p {
   font-weight: 700;
@@ -197,4 +199,41 @@ main {
   margin-left: 20px;
   border-bottom: 1px solid #58a9a7;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* CSS rules for mobile view */
+  body {
+    width: 100%;
+  }
+  body .job-card {
+    position: relative;
+    width: 350px;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  body .job-card .job-card__tags {
+    border-top: 1px solid gray;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+  body .job-card .job-card__info {
+    flex-wrap: wrap;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+  body .job-card .job-card__info .img-c {
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    height: 60px;
+    width: 60px;
+  }
+  body .job-card .job-card__info .img-c .img-fluid {
+    padding: 5px 5px;
+    background-color: white;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@ var allCards = $("#job-list > li");
 var filterTagsMainWrapper = $(".filter-tags-c");
 
 function addTagToFilterArea(tag){
-  //debugger;
+  //// debugger;
   var filterAreaTags = tagsAdded.find("li");
   var addFlag = true;
  
@@ -27,12 +27,14 @@ function clearAllTags(){
   tagsAdded.find("li").remove();
   //second fix
   allCards.removeClass("d-none")
+  //sixth fix
+  toggleTagsFilterArea('hidden');
   
 }
 function toggleTagsFilterArea(flag){
   if(flag == 'hidden'){
     filterTagsMainWrapper.hide();
-    debugger
+    // debugger
   }
    
    
@@ -48,15 +50,22 @@ function toggleTagsFilterArea(flag){
       toggleTagsFilterArea('hidden');
       
 
+
       $(".clear-tags").click(clearAllTags)
-
+    
       cardTags.click(function(){
-
+       
         toggleTagsFilterArea('show');
         var tagText = $(this).text();
         var matching = 0;
         
+        //fix
+        allCards.removeClass("d-flex");
         allCards.addClass("d-none").attr("data-show",false);
+        
+        
+
+     
         addTagToFilterArea(tagText);
         var tagSelected = tagsAdded.find("li");
 
@@ -64,7 +73,8 @@ function toggleTagsFilterArea(flag){
         for(var i = 0; i< allCards.length;i++){
           //third fix
           matching=0;
-          //  debugger;
+         
+          //  // debugger;
           
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
           //console.log(singleCardTags)
@@ -85,6 +95,9 @@ function toggleTagsFilterArea(flag){
           }
           if(matching == tagSelected.length){
                 allCards.eq(i).removeClass("d-none");
+                //fix
+                allCards.eq(i).addClass("d-flex");
+                
           }
         }
       })
@@ -92,24 +105,25 @@ function toggleTagsFilterArea(flag){
       $(document).on("click",".close-span",function(){
 
         
-      
+     
         $(this).parents(".tag-filter").remove();
         
         var matching = 0;
         var tagSelected = tagsAdded.find("li");
 
         var name = tagSelected.text();//added
-
         debugger
+        // debugger
        
-
+        allCards.removeClass("d-flex");
         allCards.addClass("d-none").attr("data-show",false);
+      
        
         debugger
         for(var i = 0; i< allCards.length;i++){
           //fifth fix
           matching=0;
-          debugger
+          // debugger
           var singleCardTags = allCards.eq(i).find(".job-card__tags li");
           for(k=0;k<tagSelected.length;k++){
 
@@ -117,19 +131,28 @@ function toggleTagsFilterArea(flag){
 
               if(singleCardTags.eq(j).text() == tagSelected.eq(k).text()){
                 matching +=1;
-                debugger
+                // debugger
                // allCards.eq(i).attr("data-show",true).removeClass("d-none")
               }
             }
 
           }
           if(matching == tagSelected.length){
-            debugger
+            // debugger
             allCards.eq(i).removeClass("d-none");
+            allCards.eq(i).addClass("d-flex");
       }
 
         }
 
+        var x = tagsAdded.text() ;
+        debugger
+
+        //fix
+        if(tagsAdded.text() == ''){
+          toggleTagsFilterArea('hidden')
+          debugger
+        }
         
       })
 
