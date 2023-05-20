@@ -1,4 +1,3 @@
-
 var tagsAdded = $("#filter-tags-list");
 var cardTags = $(".job-card__tags li");
 var allCards = $("#job-list > li");
@@ -83,9 +82,10 @@ function toggleTagsFilterArea(flag){
           
           for(var k = 0; k<tagSelected.length;k++){
             for(j = 0 ;j < singleCardTags.length; j++){
+           
               if(singleCardTags.eq(j).text() == tagSelected.eq(k).find("p").text() ){
                 matching +=1;
-                
+               
   
   
               }
@@ -96,11 +96,13 @@ function toggleTagsFilterArea(flag){
             
           }
           if(matching == tagSelected.length){
+            
                 allCards.eq(i).removeClass("d-none");
                 //fix
                 allCards.eq(i).addClass("d-flex");
                 
           }
+          matching=0;
         }
       })
       
