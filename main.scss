@@ -6,6 +6,11 @@
 //   font-size: 15px;
 // }
 
+
+
+.custom_width{
+  width:212px;
+}
 header {
   width: 100vw;
   height: 150px;
@@ -111,6 +116,7 @@ main {
       list-style-type: none;
       padding: 0;
       margin: 0;
+      width:250px;
 
       li {
         font-size: 15px;
@@ -171,7 +177,7 @@ main {
       color: #58a9a7;
       font-weight: 500;
       background-color: #f1f7f5;
-      margin: 5px 10px 5px 0;
+      margin: 10px 10px 5px 0;
       cursor: pointer;
       transition: all ease 0.2s;
 
@@ -247,7 +253,10 @@ main {
   }
 }
 
-@media (max-width:420px) {
+@media (max-width:900px) {
+  .info_container{
+    justify-content: start;
+  }
   .row
   {
   ul.col-12
@@ -281,6 +290,7 @@ main {
       width: 300px;
       margin-bottom: -140px;
       flex-wrap: wrap;
+      height:fit-content;
     }
   }
 
