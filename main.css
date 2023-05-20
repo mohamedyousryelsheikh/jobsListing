@@ -27,7 +27,9 @@ main {
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 0 !important;
+  margin-bottom: 30px !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .job-card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
@@ -38,19 +40,26 @@ main {
   font-weight: 500;
   line-height: 1.4;
 }
+.job-card__info > div {
+  position: relative;
+}
 .job-card__info a:hover {
   text-decoration: none;
 }
 .job-card__info .img-c {
-  height: 100%;
-  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 70px;
+  height: 70px;
   margin-right: 15px;
   border: solid;
   border-radius: 50%;
 }
 .job-card__info .img-c img {
-  max-height: auto;
-  max-width: 60px;
+  max-height: 100%;
+  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -127,6 +136,7 @@ main {
 .job-card__tags {
   padding-left: 20px;
   list-style-type: none;
+  justify-content: flex-end;
 }
 .job-card__tags li {
   margin-right: 10px;
@@ -156,7 +166,6 @@ main {
   align-items: center;
   margin-bottom: 30px;
   border-radius: 5px;
-  margin-top: -105px;
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 .filter-tags-c ul {
@@ -200,4 +209,39 @@ main {
   margin-left: 20px;
   border-bottom: 1px solid #58a9a7;
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .row ul.col-12 li.job-card {
+    position: relative;
+  }
+  .row ul.col-12 li.job-card .job-card__info h6 {
+    font-size: 14px;
+  }
+  .row ul.col-12 li.job-card .job-card__info p.description {
+    display: none;
+  }
+  .row ul.col-12 li.job-card .job-card__info .img-c {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    transform: translateY(calc(-30px - 50%));
+    padding: 10px;
+  }
+  .row ul.col-12 li.job-card ul.job-card__tags {
+    padding-right: 21px;
+    list-style-type: none;
+    justify-content: flex-start;
+    border-top: 1px solid;
+    padding: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .row ul.col-12 li.job-card ul.job-card__tags li {
+    font-size: 12px;
+    padding: 4px;
+  }
 }/*# sourceMappingURL=main.css.map */
