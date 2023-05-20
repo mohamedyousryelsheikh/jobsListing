@@ -29,7 +29,10 @@ main {
   justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 20px;
+
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  
+
 }
 .job-card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
@@ -50,6 +53,7 @@ main {
   border-radius: 50%;
 }
 .job-card__info .img-c img {
+
   height: 100%;
   max-width: 100%;
   -o-object-fit: fill;
@@ -221,5 +225,6 @@ main {
   }
   .img-c {
     margin-top: -50px;
+
   }
 }/*# sourceMappingURL=main.css.map */

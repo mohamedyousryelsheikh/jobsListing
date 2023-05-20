@@ -36,8 +36,9 @@ main {
   justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 20px;  
+
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  
+
   
   
   &:hover {
@@ -80,7 +81,7 @@ main {
         
         border-radius: 50%;
         
-        
+
       }
     }
 
@@ -265,6 +266,7 @@ main {
     cursor: pointer;
   }
 }
+
 .card-container{
   ul {
     list-style-type: none;
@@ -285,4 +287,5 @@ main {
   .img-c {
     margin-top: -50px;
   }
+
 }
