@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100&display=swap");
 .custom_width {
-  width: 212px;
+  background-color: none;
 }
 
 header {
@@ -212,8 +212,14 @@ main {
 }
 
 @media (max-width: 900px) {
+  .custom_width {
+    width: 250px;
+  }
   .info_container {
     justify-content: start;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-left: -40px;
   }
   .row ul.col-12 li.job-card {
     margin-bottom: 70px;

@@ -59,6 +59,7 @@ function toggleTagsFilterArea(flag){
         allCards.addClass("d-none").attr("data-show",false);
         
         
+        
         addTagToFilterArea(tagText);
         var tagSelected = tagsAdded.find("li");
         
