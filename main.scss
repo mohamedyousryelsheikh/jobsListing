@@ -28,7 +28,7 @@ main {
 }
 
 .job-card {
-  
+  flex-wrap: wrap;
   padding: 30px;
   background-color: white;
   width: 100%;
@@ -265,7 +265,7 @@ main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 969px) {
   /* CSS rules for mobile view */
 
 body{
