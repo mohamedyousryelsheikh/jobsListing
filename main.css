@@ -34,6 +34,9 @@ main {
   
 
 }
+.job-card .job-card__info {
+  width: 400px;
+}
 .job-card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
@@ -49,8 +52,10 @@ main {
 .job-card__info .img-c {
   height: 88px;
   width: 88px;
+
   margin-right: 15px;
   border-radius: 50%;
+
 }
 .job-card__info .img-c img {
 
