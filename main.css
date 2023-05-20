@@ -21,7 +21,11 @@ main {
 }
 
 .job-card {
+<<<<<<< HEAD
+  flex-wrap: wrap;
+=======
   display: flex;
+>>>>>>> 73b2780494ab96ba4d4608d9f7eca585190b0db5
   padding: 30px;
   background-color: white;
   width: 100%;
@@ -215,6 +219,12 @@ main {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+@media (max-width: 969px) {
+  /* CSS rules for mobile view */
+  body {
+    width: 100%;
+=======
 .card-container ul {
   list-style-type: none;
 }
@@ -224,6 +234,7 @@ main {
     display: block;
     margin-bottom: 50px;
     padding: 10px;
+>>>>>>> 73b2780494ab96ba4d4608d9f7eca585190b0db5
   }
   .job-card__tags {
     padding-left: 0px !important;
