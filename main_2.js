@@ -20,6 +20,7 @@ function addTagToFilterArea(tag) {
 function clearAllTags() {
   tagsAdded.find("li").remove();
   toggleTagsFilterArea("hidden");
+  allCards.removeClass("d-none");
 }
 function toggleTagsFilterArea(flag) {
   if (flag == 'hidden')
