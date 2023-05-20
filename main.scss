@@ -254,8 +254,18 @@ main {
   }
 }
 
-@media(min-width:767px) {
+@media(min-width:576px) {
   hr {
     display:none;
+  }
+}
+
+@media(max-width:576px) {
+  .img-c {
+    margin-top: -75px;
+  }
+
+  .job-card {
+    margin-top: 5rem !important;
   }
 }
