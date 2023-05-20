@@ -31,7 +31,9 @@ main {
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 0 !important;
+  margin-bottom: 30px !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .job-card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
@@ -42,23 +44,26 @@ main {
   font-weight: 500;
   line-height: 1.4;
 }
+.job-card__info > div {
+  position: relative;
+}
 .job-card__info a:hover {
   text-decoration: none;
 }
 .job-card__info .img-c {
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
-  width: 88px;
-  height: 88px;
+  width: 70px;
+  height: 70px;
   margin-right: 15px;
   border: solid;
   border-radius: 50%;
 }
 .job-card__info .img-c img {
-  max-height: auto;
-  max-width: 60px;
+  max-height: 100%;
+  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -136,6 +141,7 @@ main {
 .job-card__tags {
   padding-left: 20px;
   list-style-type: none;
+  justify-content: flex-end;
 }
 .job-card__tags li {
   margin-right: 10px;
@@ -165,7 +171,6 @@ main {
   align-items: center;
   margin-bottom: 30px;
   border-radius: 5px;
-  margin-top: -105px;
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 .filter-tags-c ul {
@@ -211,22 +216,9 @@ main {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
-  .custom_width {
-    width: 250px;
-  }
-  .info_container {
-    justify-content: start;
-    margin-left: 0px;
-    padding-left: 0px;
-    margin-left: -40px;
-  }
+@media (max-width: 576px) {
   .row ul.col-12 li.job-card {
-    margin-bottom: 70px;
-    height: 21%;
-  }
-  .row ul.col-12 li.job-card .job-card__info {
-    margin-top: -200px;
+    position: relative;
   }
   .row ul.col-12 li.job-card .job-card__info h6 {
     font-size: 14px;
@@ -236,18 +228,25 @@ main {
   }
   .row ul.col-12 li.job-card .job-card__info .img-c {
     background-color: white;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    transform: translateY(calc(-30px - 50%));
+    padding: 10px;
   }
   .row ul.col-12 li.job-card ul.job-card__tags {
-    margin-right: 21px;
-    margin-left: -215px;
+    padding-right: 21px;
     list-style-type: none;
     justify-content: flex-start;
     border-top: 1px solid;
     padding: 4px;
-    width: 300px;
-    margin-bottom: -140px;
     flex-wrap: wrap;
-    height: -moz-fit-content;
-    height: fit-content;
+    justify-content: flex-start;
+  }
+  .row ul.col-12 li.job-card ul.job-card__tags li {
+    font-size: 12px;
+    padding: 4px;
   }
 }/*# sourceMappingURL=main.css.map */
