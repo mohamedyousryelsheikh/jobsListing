@@ -8,7 +8,9 @@
 
 
 
-
+.custom_width{
+  background-color: none;
+}
 header {
   width: 100vw;
   height: 150px;
@@ -252,8 +254,15 @@ main {
 }
 
 @media (max-width:900px) {
+
+  .custom_width{
+    width:250px;
+  }
   .info_container{
     justify-content: start;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-left: -40px;
   }
   .row
   {
